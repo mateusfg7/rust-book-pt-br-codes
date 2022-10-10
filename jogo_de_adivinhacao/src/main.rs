@@ -22,17 +22,24 @@ fn main() {
 
         // `trim()` will remove any whitespace before and after, or \n (newline), entered by enter key.
         // `parse()` will convert a string to a variety of number types
-        let palpite: u32 = palpite
-            .trim()
-            .parse()
-            .expect("Por favor, digite um número!");
+        // let palpite: u32 = palpite
+        //     .trim()
+        //     .parse()
+        //     .expect("Por favor, digite um número!");
+        let palpite: u32 = match palpite.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
 
         println!("Você disse: {palpite}");
 
         match palpite.cmp(&numero_secreto) {
             Ordering::Less => println!("Muito baixo!"),
             Ordering::Greater => println!("Muito alto!"),
-            Ordering::Equal => println!("Você acertou!"),
+            Ordering::Equal => {
+                println!("Você acertou!");
+                break;
+            }
         }
     }
 }
