@@ -7,7 +7,7 @@ use std::io;
 fn main() {
     println!("Adivinhe o número!");
 
-    let numero_secreto = rand::thread_rng().gen_range(1, 101);
+    let numero_secreto = rand::thread_rng().gen_range(1, 1001);
 
     loop {
         println!("Digite seu palpite: ");
