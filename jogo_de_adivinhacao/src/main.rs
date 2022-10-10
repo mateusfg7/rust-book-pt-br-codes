@@ -11,26 +11,28 @@ fn main() {
 
     println!("O número secreto é {numero_secreto}");
 
-    println!("Digite seu palpite: ");
+    loop {
+        println!("Digite seu palpite: ");
 
-    let mut palpite = String::new();
+        let mut palpite = String::new();
 
-    io::stdin()
-        .read_line(&mut palpite)
-        .expect("Falha ao let entrada");
+        io::stdin()
+            .read_line(&mut palpite)
+            .expect("Falha ao let entrada");
 
-    // `trim()` will remove any whitespace before and after, or \n (newline), entered by enter key.
-    // `parse()` will convert a string to a variety of number types
-    let palpite: u32 = palpite
-        .trim()
-        .parse()
-        .expect("Por favor, digite um número!");
+        // `trim()` will remove any whitespace before and after, or \n (newline), entered by enter key.
+        // `parse()` will convert a string to a variety of number types
+        let palpite: u32 = palpite
+            .trim()
+            .parse()
+            .expect("Por favor, digite um número!");
 
-    println!("Você disse: {palpite}");
+        println!("Você disse: {palpite}");
 
-    match palpite.cmp(&numero_secreto) {
-        Ordering::Less => println!("Muito baixo!"),
-        Ordering::Greater => println!("Muito alto!"),
-        Ordering::Equal => println!("Você acertou!"),
+        match palpite.cmp(&numero_secreto) {
+            Ordering::Less => println!("Muito baixo!"),
+            Ordering::Greater => println!("Muito alto!"),
+            Ordering::Equal => println!("Você acertou!"),
+        }
     }
 }
