@@ -9,8 +9,6 @@ fn main() {
 
     let numero_secreto = rand::thread_rng().gen_range(1, 11);
 
-    println!("O número secreto é {numero_secreto}");
-
     loop {
         println!("Digite seu palpite: ");
 
