@@ -19,8 +19,8 @@ fn main() {
         .read_line(&mut palpite)
         .expect("Falha ao let entrada");
 
-    /// `trim()` will remove any whitespace before and after, or \n (newline), entered by enter key.
-    /// `parse()` will convert a string to a variety of number types
+    // `trim()` will remove any whitespace before and after, or \n (newline), entered by enter key.
+    // `parse()` will convert a string to a variety of number types
     let palpite: u32 = palpite
         .trim()
         .parse()
